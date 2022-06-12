@@ -1,0 +1,50 @@
+*{
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    }
+    
+    .container{
+        display:flex;
+        flex-direction:column;
+        width:40%;
+        margin:auto;
+        justify-content:center;
+        align-items: center;
+        height:60vh;
+        border:2px dashed rgb(16, 181, 16);
+        border-radius: 12px;
+    }
+    form{
+        width:100%;
+        height:60%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        align-items:center;
+    }
+    .inputLabels{
+        display:flex;
+        flex-direction: row;
+        width: 80%;
+        height:5vh;
+        align-items: center;
+        justify-content:space-between;
+    }
+    input{
+        display: inline-block;
+        height:5vh;
+        width:80%;
+        border:1px solid grey;
+        border-radius: 6px;
+    }
+    input[type="submit"]{
+        margin:auto;
+        width:40%;
+        color:white;
+        font-weight: bold;
+        font-size:1.2em;
+        background-color: rgb(16, 181, 16);
+    }
+    input[type="submit"]:hover{
+        cursor: pointer;
+    }
