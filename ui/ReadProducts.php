@@ -19,7 +19,7 @@ $p = new Product();
 </head>
 <body>
 <div class="container">
-    <button class="btn btn-primary my-5"><a href="product.html" class="text-light">Add Product</a></button>
+    <button class="btn btn-success my-5"><a href="product.html" class="text-light">Add Product</a></button>
     <table class="table">
         <thead>
         <th scope="col">ID</th>
@@ -34,7 +34,7 @@ $p = new Product();
         <?php
         $sql = "SELECT * FROM products";
         $stmt = $Connect->query($sql);
-    print_r($stmt);
+//    print_r($stmt);
         while($DataRows=$stmt->fetch()){
         $id = $DataRows["productId"];
         $product = $DataRows["product_Name"];
@@ -51,8 +51,8 @@ $p = new Product();
                 <td><?php echo $supplier ?></td>
                 <td><?php echo $date ?></td>
                 <td>
-                    <button class="btn btn-primary " ><a href="update.php?id=<?php echo $id ; ?>" class= " text-light" style="text-decoration: none">Update</a></button>
-                    <button class= "btn btn-danger"><a href="delete.php?id=<?php echo $id ; ?>" class= " text-light" style="text-decoration: none"> Delete</a></button>
+                    <button class="btn btn-success " ><a href="updateProduct.php?id=<?php echo $id ; ?>" class= " text-light" style="text-decoration: none">Update</a></button>
+                    <button class= "btn btn-danger"><a href="../handlers/deleteProduct.php?id=<?php echo $id ; ?>" class= " text-light" style="text-decoration: none"> Delete</a></button>
                 </td>
             </tr>
         <?php } ?>

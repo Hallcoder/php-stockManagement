@@ -4,6 +4,7 @@ class Product
 {
 
     public $db;
+    public $id;
 
     public function __construct()
     {
@@ -53,32 +54,45 @@ class Product
     }
 
     //UPDATING RECORDS
-    function updateProducts($data): bool
+    function updateProducts()
     {
-        $this->db->query("UPDATE products SET title= :title,  content = :content WHERE id = :id");
+        $this->id=$_GET['id'];
+        if (isset($_POST['submit'])) {
+            $products = $_POST['product'];
+            $brand = $_POST['brand'];
+            $phone = $_POST['phone'];
+            $supplier = $_POST['supplier'];
+            $date = $_POST['date'];
 
-        $this->db->bind(':id', $data['id']);
-        $this->db->bind(':title', $data['title']);
-        $this->db->bind(':content', $data['content']);
+            $this->db->query("UPDATE products SET product_Name= :Name, brand=:Brand, supplier_phone=:Phone, supplier=:Supplier, added_date=:Added WHERE productId = :id");
+            $this->db->bind(':id', $this->id);
+            $this->db->bind(':Name', $products);
+            $this->db->bind(':Brand', $brand);
+            $this->db->bind(':Phone', $phone);
+            $this->db->bind(':Supplier', $supplier);
+            $this->db->bind(':Added', $date);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
+            if ($this->db->execute()) {
+                header('location:../ui/ReadProducts.php');
+            } else {
+                return false;
+            }
         }
     }
 
     //DELETING RECORDS
-    function deleteProduct($id)
+    function deleteProduct()
     {
-        $this->db->query("DELETE FROM products WHERE id = :id");
+        $this->id=$_GET['id'];
+        $this->db->query("DELETE FROM products WHERE productId = :id");
 
-        $this->db->bind(':id', $id);
+        $this->db->bind(':id', $this->id);
 
         if ($this->db->execute()) {
-            return true;
+            header('location:../ui/ReadProducts.php');
         } else {
             return false;
+
         }
     }
 }
