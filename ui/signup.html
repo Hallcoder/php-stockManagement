@@ -15,16 +15,44 @@
         <h1>Sign Up </h1>
         <form action="../handlers/signin.php">
             <div class="inputLabels">
+                <label for="firstname">FirstName</label>
+                <input type="text" name="firstname">
+            </div>
+            <div class="inputLabels">
+                <label for="lastname">LastName</label>
+                <input type="password" name="lastname">
+            </div>
+            <div class="inputLabels">
                 <label for="username">Username</label>
                 <input type="text" name="username">
             </div>
             <div class="inputLabels">
-                <label for="username">Email</label>
-                <input type="email" name="username">
+                <label for="email">Email</label>
+                <input type="email" name="email">
             </div>
             <div class="inputLabels">
-                <label for="username">Password</label>
-                <input type="password" name="username">
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" value="male">
+                <label for="gender">Male</label>
+                <input type="radio" name="gender" value="female">
+                <label for="gender">female</label>
+            </div>
+            <div class="inputLabels">
+                <label for="telephone">Tel</label>
+                <input type="tel" name="telephone">
+            </div>
+            <div class="inputLabels">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+            </div>
+            <div class="inputLabels">
+                <label for="password">Nationality</label>
+                <select name="gender" >
+                    <option value="rwandan">Rwandan</option>
+                    <option value="american">American</option>
+                    <option value="southAfrican">South African</option>
+                    <option value="ugandan">Ugandan</option>
+                </select>
             </div>
             <div class="inputLabels">
                 <input type="submit" value="Sign Up">
