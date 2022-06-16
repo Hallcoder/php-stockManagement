@@ -1,7 +1,8 @@
 <?php
-require_once("Product.php");
+require_once("Outgoing.php");
 
-$p = new Product();
+$out = new Outgoing();
 //INSERT
 //$data = ['title' => 'This is next Post', 'content' => 'Enjoying the PHP OOP!'];
-$p->addProducts();
+$out->addOutgoing();
+
