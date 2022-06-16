@@ -24,6 +24,8 @@ $u = new User();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--    <link rel="stylesheet" href="user.css">-->
     <style>
         *{
             font-family:nunito;
@@ -48,6 +50,23 @@ $u = new User();
     <?php endif; ?>
     </div>
     <button class="btn btn-success my-5"><a href="user.html" class="text-light">Add User</a></button>
+    <div class="input-group srh" >
+        <form method="post" action="../handlers/search.php">
+            <div class="form-outline">
+                <input type="search" id="form1" class="form-control my-2" name="search" placeholder="Search User"/>
+<!--                <label class="form-label" for="form1">Search User</label>-->
+            </div>
+            <input type="submit" class="btn btn-primary py-2 search" name="submit" value="Search">
+            </input>
+        </form>
+        <?php
+        if (isset($_POST['submit'])) {
+            $search = $_POST['search'];
+            $sql = "SELECT * FROM users where username like '%$search'";
+            $stmt = $Connect->query($sql);
+        }
+        ?>
+    </div>
     <table class="table container">
         <thead>
         <th scope="col">ID</th>

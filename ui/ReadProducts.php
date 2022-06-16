@@ -48,6 +48,7 @@ $p = new Product();
     <?php endif; ?>
     </div>
     <button class="btn btn-success my-5"><a href="product.php" class="text-light">Add Product</a></button>
+    <button class="btn btn-success my-5"><a href="Outgoing.php" class="text-light">Add Outgoing Product</a></button>
     <table class="table container">
         <thead>
         <th scope="col">ID</th>

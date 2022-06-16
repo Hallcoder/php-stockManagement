@@ -1,7 +1,7 @@
 <?php
-require_once("Product.php");
+require_once("Inventory.php");
 
-$p = new Product();
+$i = new Inventory();
 //INSERT
 //$data = ['title' => 'This is next Post', 'content' => 'Enjoying the PHP OOP!'];
-$p->addProducts();
+$i->addInventory();
